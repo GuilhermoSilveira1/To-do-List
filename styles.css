@@ -1,0 +1,63 @@
+body {
+    background-color: #095199;
+}
+
+h1 {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.container {
+    text-align: center;
+}
+
+#todo-input {
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    text-align: center;
+}
+
+#adicionar {
+    color: #FFF;
+    background-color: #095199;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100px;
+    height: 30px;
+}
+
+#adicionar:hover {
+    background-color: #FFF;
+    color: #095199;
+    transition: 0.5s;
+}
+
+.task {
+    color: #FFF;
+    font-size: 18px;
+    font-weight: bold;
+    list-style-type: none;
+    display: flex; /* Ativar o layout flexível */
+    align-items: center; /* Alinhar itens verticalmente */
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.btn {
+    border: 2px solid #000;
+    width: 5px;
+    height: 15px;
+    border-radius: 10px;
+}
+
+.task .btn {
+    margin-right: 10px; /* Adiciona um espaçamento entre o botão e o texto */
+}

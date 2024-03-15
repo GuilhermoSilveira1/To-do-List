@@ -2,6 +2,10 @@ let todoInput = window.document.getElementById("todo-input");
 let button = window.document.getElementById("adicionar");
 let ul = window.document.getElementById("todo-list");
 
+//função para carregar as tarefas salvas na memória local do usuário
+
+
+//Adicionado o evento para chamar a função de adicionar tarefas ao DOM da página
 button.addEventListener("click", addTask);
 
 function addTask(event) {
@@ -29,6 +33,9 @@ function addTask(event) {
         // Adicionar a nova tarefa à lista
         ul.appendChild(newTaskItem);
 
+        //função para salvar as tarefas adicionadas pelo usuário no armazenamento local
+        saveTasks();
+
         // Limpar o campo de entrada após adicionar a tarefa
         todoInput.value = '';
     }
@@ -37,4 +44,19 @@ function addTask(event) {
 function taskCompleted(event) {
     // Navegar até o elemento li (pai do botão) e adicionar a classe completed ao texto dentro desse elemento
     event.target.parentNode.classList.toggle("completed"); // Adiciona ou remove a classe completed do pai do botão
+
+    //função para salvar as tarefas adicionadas pelo usuário no armazenamento local
+    saveTasks();
+}
+
+function saveTasks() {
+    //Criando um array que vai armazenar as tarefas já adicionadas
+    let tasks = [];
+
+    ul.querySelectorAll("li").forEach(function(taskItem){
+        //Essa parte aqui empurra o texto no taskItem para a lista vazia tasks
+        tasks.push(taskItem.innerText);
+    });
+
+    localStorage.setItem("tasks",JSON.stringify(tasks));
 }
